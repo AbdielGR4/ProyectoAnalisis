@@ -3,16 +3,15 @@ const cookieParser = require('cookie-parser');
 
 // Middleware para validar el token
 const authenticateToken = (req, res, next) => {
-  // Intenta obtener el token de las cookies primero
   const token = req.cookies.authToken || req.headers['authorization']?.split(' ')[1];
 
   if (!token) {
-    return res.sendStatus(401); // Unauthorized
+    return res.sendStatus(401); 
   }
 
   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
     if (err) {
-      return res.sendStatus(403); // Forbidden
+      return res.sendStatus(403); 
     }
     req.user = user;
     next();

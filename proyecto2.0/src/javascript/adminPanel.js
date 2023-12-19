@@ -5,7 +5,6 @@ function openPanel(panelId) {
         panels[i].style.display = 'none';
     }
   
-    // Quitar la clase 'active' de todos los elementos de la barra lateral
     var links = document.querySelectorAll('.sidebar-menu li a');
     for (var j = 0; j < links.length; j++) {
         links[j].classList.remove('active');
@@ -13,15 +12,12 @@ function openPanel(panelId) {
   
     // Mostrar el panel seleccionado
     document.getElementById(panelId).style.display = 'block';
-  
-    // Añadir la clase 'active' al elemento de la barra lateral que fue clickeado
     event.currentTarget.classList.add('active');
 }
 
 // Función para manejar el envío del formulario
 document.getElementById('registroChoferes').addEventListener('submit', function(event) {
     event.preventDefault();
-    // Aquí iría la lógica para procesar el formulario, como una petición AJAX.
     alert('Los datos del chofer se han enviado correctamente.');
 });
 
@@ -89,8 +85,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function cargarAdministradores() {
-    fetch('/api/users/admins', { // Asegúrate de que esta sea la URL correcta
-        credentials: 'include' // para enviar la cookie de autenticación
+    fetch('/api/users/admins', { 
+        credentials: 'include' 
     })
     .then(response => {
         if (!response.ok) {
@@ -102,7 +98,6 @@ function cargarAdministradores() {
         const listaAdmins = document.querySelector('.administradores-lista tbody');
         // Limpia la lista actual
         listaAdmins.innerHTML = '';
-        // Crea las filas de la tabla para cada administrador
         admins.forEach(admin => {
             const fila = document.createElement('tr');
             fila.innerHTML = `
@@ -125,8 +120,8 @@ function cargarAdministradores() {
 }
 
 function cargarChoferes() {
-    fetch('/api/users/getDrivers', { // Asegúrate de que esta sea la URL correcta
-        credentials: 'include' // para enviar la cookie de autenticación si es necesario
+    fetch('/api/users/getDrivers', { 
+        credentials: 'include' 
     })
     .then(response => {
         if (!response.ok) {
@@ -136,9 +131,7 @@ function cargarChoferes() {
     })
     .then(choferes => {
         const listaChoferes = document.querySelector('.choferes-lista tbody');
-        // Limpia la lista actual
         listaChoferes.innerHTML = '';
-        // Crea las filas de la tabla para cada chofer
         choferes.forEach(chofer => {
             const fila = document.createElement('tr');
             fila.innerHTML = `
@@ -161,20 +154,18 @@ function cargarChoferes() {
     });
 }
 
-// Llamar a cargarChoferes cuando el documento se carga
 document.addEventListener('DOMContentLoaded', function() {
     cargarChoferes();
 });
 
 
-// Carga todas las rutas al cargar el documento
 document.addEventListener('DOMContentLoaded', function() {
     cargarRutas();
 });
 
 function cargarRutas() {
-    fetch('/api/routes/routes', { // Asegúrate de que esta sea la URL correcta
-        credentials: 'include' // para enviar la cookie de autenticación
+    fetch('/api/routes/routes', { 
+        credentials: 'include' 
     })
     .then(response => {
         if (!response.ok) {
@@ -183,7 +174,7 @@ function cargarRutas() {
         return response.json();
     })
     .then(rutas => {
-        const listaRutas = document.querySelector('.rutas-lista tbody'); // Asegúrate de que este es el selector correcto de tu tabla
+        const listaRutas = document.querySelector('.rutas-lista tbody'); 
         // Limpia la lista actual
         listaRutas.innerHTML = '';
         // Crea las filas de la tabla para cada ruta
@@ -224,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const costo = document.getElementById('costo').value;
       if (!costo || isNaN(costo) || Number(costo) < 0) {
         alert('Por favor, introduce un costo válido (mayor a 0).');
-        return; // Detiene el envío del formulario
+        return; 
     }
       const routeData = {
         nombreRuta: nombreRuta,
@@ -252,15 +243,15 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(data => {
         if (data.message === 'Ruta creada con éxito') {
           alert('Ruta creada con éxito');
-          createRouteForm.reset(); // Limpia el formulario después de un registro exitoso
+          createRouteForm.reset(); 
         } else if (data.message.includes('ya existe')) {
           alert('Ya existe una ruta con ese nombre');
         } else {
-          alert(data.message); // Otros mensajes de error
+          alert(data.message); 
         }
       })
       .catch(error => {
-        alert(error.message); // Muestra un mensaje de error si la promesa falla
+        alert(error.message); 
       });
     });
   });
@@ -271,22 +262,20 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function cargarRutasDisponibles() {
-    fetch('/api/routes/available-routes', { // Asegúrate de que esta sea la URL correcta
-        credentials: 'include' // para enviar la cookie de autenticación si es necesario
+    fetch('/api/routes/available-routes', { 
+        credentials: 'include' 
     })
     .then(response => response.json())
     .then(rutas => {
         const selectRutas = document.getElementById('rutaAsignada');
-        selectRutas.innerHTML = ''; // Limpia las rutas existentes
+        selectRutas.innerHTML = ''; 
 
         if (rutas.length === 0) {
-            // No hay rutas disponibles, agrega la opción 'sin asignar'
             const option = document.createElement('option');
-            option.value = ''; // Puedes decidir qué valor usar aquí
+            option.value = ''; 
             option.textContent = 'Sin asignar';
             selectRutas.appendChild(option);
         } else {
-            // Hay rutas disponibles, llena el dropdown con ellas
             rutas.forEach(ruta => {
                 const option = document.createElement('option');
                 option.value = ruta._id;
@@ -309,7 +298,6 @@ document.addEventListener('DOMContentLoaded', function() {
     registroChoferesForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Recolectar datos del formulario
         const choferData = {
             nombre: document.getElementById('nombre').value,
             apellidos: document.getElementById('apellido').value,
@@ -318,14 +306,13 @@ document.addEventListener('DOMContentLoaded', function() {
             rutaAsignada: document.getElementById('rutaAsignada').value
         };
 
-        // Enviar solicitud de registro al servidor
         fetch('/api/users/register/driver', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(choferData),
-            credentials: 'include' // Asegúrate de enviar las cookies de sesión si es necesario
+            credentials: 'include' 
         })
         .then(response => {
             if (!response.ok) {
@@ -337,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(data => {
             alert('Chofer registrado con éxito');
-            registroChoferesForm.reset(); // Limpia el formulario después de un registro exitoso
+            registroChoferesForm.reset(); 
             cargarRutasDisponibles();
         })
         .catch(error => {

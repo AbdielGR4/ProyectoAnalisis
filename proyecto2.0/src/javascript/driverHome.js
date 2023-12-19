@@ -37,14 +37,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Event listener para el formulario de edición
     const form = document.querySelector('#editProfile form');
     form.addEventListener('submit', function(event) {
         event.preventDefault(); 
         actualizarPerfilChofer(); 
     });
 
-    // Abrir el primer panel por defecto y cargar los datos del perfil
     openPanel('profile');
     cargarPerfilChofer();
 });
@@ -100,12 +98,10 @@ function cargarDatosEdicion() {
 
 function actualizarPerfilChofer() {
 
-     // Intenta obtener los elementos del formulario
      const nombreElement = document.getElementById('inputNombre');
      const apellidosElement = document.getElementById('inputApellido');
      const emailElement = document.getElementById('inputEmail');
  
-     // Verifica que cada elemento exista antes de intentar usar su valor
      if (!nombreElement || !apellidosElement || !emailElement) {
          console.error('Uno o más elementos del formulario no se encuentran.');
          return; 

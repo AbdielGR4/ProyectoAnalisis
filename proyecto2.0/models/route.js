@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-//esquema de rutas
 const rutaSchema = new mongoose.Schema({
     nombreRuta: { type: String, required: true, unique:true},
     provincia: { type: String, required: true },

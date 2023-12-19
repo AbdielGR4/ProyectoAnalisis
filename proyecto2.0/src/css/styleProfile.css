@@ -10,42 +10,42 @@ body {
     height: 100vh;
 }
 header {
-    background-color: #333; /* Color de fondo oscuro */
+    background-color: #333; 
     color: white;
     padding: 10px 0;
-    width: 100%; /* Asegúrate de que el header ocupe el ancho completo */
+    width: 100%; 
     box-sizing: border-box;
 }
 
 header nav {
-    width: 90%; /* Ajusta este valor según tus necesidades */
-    margin: 0 auto; /* Centra la navegación en la página */
+    width: 90%; 
+    margin: 0 auto; 
 }
 
 header nav ul {
-    list-style-type: none; /* Remueve los bullets de la lista */
+    list-style-type: none; 
     padding: 0;
     margin: 0;
-    display: flex; /* Organiza los elementos de la lista en línea */
-    justify-content: center; /* Centra los elementos de la lista */
-    align-items: center; /* Centra los elementos verticalmente */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 header nav ul li {
-    margin: 0 20px; /* Espacio horizontal entre elementos de la lista */
+    margin: 0 20px; 
 }
 
 header nav ul li a {
-    color: white; /* Color del texto de los enlaces */
-    text-decoration: none; /* Remueve el subrayado de los enlaces */
-    padding: 5px 10px; /* Espaciado alrededor de los enlaces */
-    border-radius: 5px; /* Bordes redondeados para los enlaces */
-    transition: background-color 0.3s; /* Transición suave para el hover */
+    color: white; 
+    text-decoration: none; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
 }
 
 header nav ul li a:hover {
-    background-color: #777; /* Color de fondo para el hover */
-    color: #fff; /* Color del texto para el hover */
+    background-color: #777; 
+    color: #fff; 
 }
 
 h1 {
