@@ -25,7 +25,6 @@ exports.register = async (req, res) => {
   
     try {
 
-      // Encriptar datos de la tarjeta de crédito
       const cipher = crypto.createCipheriv(algorithm, secretKey, iv);
       let encryptedData = cipher.update(JSON.stringify(req.body.tarjetaCredito), 'utf-8', 'hex');
       encryptedData += cipher.final('hex');

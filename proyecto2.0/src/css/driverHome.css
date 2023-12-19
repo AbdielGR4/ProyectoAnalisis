@@ -41,13 +41,12 @@ body {
     background-color: #4b5c77;
 }
 
-/* Contenedor principal con padding adicional */
+
 .main-container {
     margin-left: 250px;
     padding: 20px;
 }
 
-/* Contenido del panel con sombra y bordes redondeados */
 .panel-content {
     background-color: white;
     padding: 20px;
@@ -57,7 +56,6 @@ body {
     display: none; 
 }
 
-/* Estilo de formulario */
 form {
     margin-top: 20px;
 }
@@ -99,7 +97,7 @@ button:hover {
     background-color: #003399;
 }
 
-/* Estilos para la información del perfil */
+
 .panel-content p {
     font-size: 16px;
     margin-bottom: 10px;

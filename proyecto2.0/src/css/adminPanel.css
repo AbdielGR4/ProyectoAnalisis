@@ -11,7 +11,6 @@ body {
     color: #666;
 }
 
-/* Estilos para la barra lateral */
 .sidebar-nav {
     width: 250px;
     background-color: #394264;
@@ -43,13 +42,11 @@ body {
     background-color: #50597b;
 }
 
-/* Estilos para el contenedor principal */
 .main-container {
     margin-left: 250px;
     padding: 20px;
 }
 
-/* Estilos para la barra superior */
 .navbar-top {
     height: 50px;
     background-color: #fff;
@@ -60,7 +57,6 @@ body {
     padding: 0 20px;
 }
 
-/* Estilos para las tarjetas de estadísticas rápidas */
 .quick-stats {
     display: flex;
     margin-top: 20px;
@@ -75,12 +71,10 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Eliminamos el margen adicional del último elemento */
 .quick-stats > div:last-child {
     margin-right: 0;
 }
 
-/* Estilos para las secciones del dashboard */
 .sales-overview, .traffic-sources, .team-members, .customer-location, .activity-log {
     background-color: #fff;
     margin-top: 20px;
@@ -90,7 +84,7 @@ body {
 }
 
 .panel-content {
-    display: none; /* Inicialmente oculto */
+    display: none; 
     padding: 20px;
     background-color: #fff;
     border-radius: 4px;
@@ -99,22 +93,20 @@ body {
 }
 
 .panel-content select {
-    width: 100%; /* Asume el ancho completo de su contenedor */
+    width: 100%; 
     padding: 10px;
-    margin-bottom: 0; /* Asegura que no haya margen en la parte inferior */
+    margin-bottom: 0; 
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: white;
-    display: block; /* Esto garantiza que el select sea un bloque */
+    display: block; 
 }
 
 
-/* Estilos para el botón activo en la barra lateral */
 .sidebar-menu li a.active {
     background-color: #50597b;
 }
 
-/* Estilos generales para los formularios del panel */
 .panel-content form {
     background: #ffffff;
     padding: 20px;
@@ -147,9 +139,8 @@ body {
     border-radius: 4px;
 }
 
-/* Botón de envío estilizado */
 .panel-content button {
-    background-color: #5cb85c; /* Color verde para botones de enviar/aceptar */
+    background-color: #5cb85c; 
     color: white;
     padding: 10px 20px;
     border: none;
@@ -159,10 +150,9 @@ body {
 }
 
 .panel-content button:hover {
-    background-color: #4cae4c; /* Un tono de verde más oscuro para el hover */
+    background-color: #4cae4c; 
 }
 
-/* Estilos para los botones de la barra lateral */
 .sidebar-menu li a {
     padding: 15px 20px;
     display: block;
@@ -173,24 +163,21 @@ body {
 
 .sidebar-menu li a:hover,
 .sidebar-menu li a.active {
-    background-color: #5cb85c; /* Color verde para resaltar la sección activa */
+    background-color: #5cb85c; 
     color: #fff;
 }
 
-/* Estilos adicionales para ajustar el layout */
 .main-container {
-    padding-left: 20px; /* Asegúrate de tener algo de espacio a la izquierda */
-    padding-top: 20px; /* Espacio en la parte superior */
+    padding-left: 20px; 
+    padding-top: 20px; 
 }
 
-/* Mejora la visibilidad del texto de los inputs */
 input::placeholder {
     color: #999;
 }
 
-/* Ajustar el ancho del sidebar para que coincida con la imagen proporcionada */
 .sidebar-nav {
-    width: 200px; /* Puedes ajustar este valor según lo necesites */
+    width: 200px; 
 }
 
 
@@ -203,15 +190,14 @@ input::placeholder {
     cursor: pointer;
     font-size: 0.9em;
     transition: background-color 0.2s;
-    color: white; /* La mayoría de tus botones tienen texto en blanco */
+    color: white; 
 }
 
-/* Estilos específicos para botones por color */
 .btn-eliminar { background-color: #dc3545; }
-.btn-actualizar { background-color: #ffc107; color: #333; } /* Color de texto modificado para contraste */
+.btn-actualizar { background-color: #ffc107; color: #333; } 
 .btn-banear { background-color: #28a745; }
 
-/* Hover común para todos los botones */
+
 .btn:hover { opacity: 0.8; }
 
 .form-registro .form-group {
@@ -230,9 +216,9 @@ input::placeholder {
     border-radius: 4px;
 }
 
-/* Botón de envío estilizado para los formularios */
+
 .btn-enviar {
-    background-color: #5cb85c; /* Color verde para botones de enviar/aceptar */
+    background-color: #5cb85c; 
     color: white;
     padding: 10px 20px;
     border: none;
@@ -241,7 +227,7 @@ input::placeholder {
 }
 
 .btn-enviar:hover {
-    background-color: #4cae4c; /* Un tono de verde más oscuro para el hover */
+    background-color: #4cae4c; 
 }
 
 .table-lista {
@@ -262,7 +248,7 @@ input::placeholder {
     color: #495057;
 }
 
-/* Estilos para los botones de acciones */
+
 .table-lista .btn {
     padding: 5px 10px;
     margin-right: 5px;
@@ -292,7 +278,6 @@ input::placeholder {
     opacity: 0.8;
 }
 
-/* Asegúrate de que el cuerpo de la tabla tenga un fondo blanco para que los botones resalten */
 .table-lista tbody {
     background-color: #fff;
 }

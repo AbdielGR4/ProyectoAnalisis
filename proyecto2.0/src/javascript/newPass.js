@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const token = urlParams.get('token');
-    // Guarda el token en algún lugar, como localStorage o como un campo oculto en un formulario
     localStorage.setItem('resetToken', token);
 });
 
@@ -17,15 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (newPassword !== confirmNewPassword) {
             errorMessageDiv.textContent = 'Las contraseñas no coinciden.';
             errorMessageDiv.style.display = 'block';
-            return; // No enviar la solicitud si las contraseñas no coinciden
+            return; 
         }
 
-        // Restablecer el mensaje de error si las contraseñas coinciden
         errorMessageDiv.style.display = 'none';
         
-        const token = localStorage.getItem('resetToken'); // El token que guardaste antes
+        const token = localStorage.getItem('resetToken'); 
 
-        // Proceder con el envío de la solicitud al servidor
         fetch('http://localhost:3000/api/users/reset-password/' + token, {
             method: 'POST',
             headers: {
@@ -41,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(data => {
             alert('Contraseña cambiada con éxito.');
-            window.location.href = '../html/login.html'; // Redirige al login
+            window.location.href = '../html/login.html'; 
         })
         .catch((error) => {
             errorMessageDiv.textContent = error.message;

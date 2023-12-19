@@ -174,13 +174,13 @@ function recargarWallet() {
         throw new Error('La respuesta no es un array');
       }
       const contenedorTransacciones = document.getElementById('historialTransacciones');
-      contenedorTransacciones.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevas transacciones
+      contenedorTransacciones.innerHTML = ''; 
   
       transacciones.forEach(transaccion => {
         const transaccionElemento = document.createElement('div');
         transaccionElemento.classList.add('transaccion');
   
-        const fecha = new Date(transaccion.date).toLocaleString(); // Formatear la fecha
+        const fecha = new Date(transaccion.date).toLocaleString(); 
         transaccionElemento.innerHTML = `
           <div class="transaccion-datos">
             <div class="transaccion-fecha">${fecha}</div>

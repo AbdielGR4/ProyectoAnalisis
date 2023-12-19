@@ -20,7 +20,7 @@ exports.registerAdmin = async (req, res) => {
       apellidos: req.body.apellidos,
       email: req.body.email,
       password: hashedPassword,
-      rol: 'admin' // El rol es siempre 'admin'
+      rol: 'admin' 
     });
 
     // Guardar el administrador en la base de datos
@@ -41,7 +41,7 @@ exports.registerAdmin = async (req, res) => {
 exports.getAdmins = async (req, res) => {
     try {
       // Buscar todos los administradores en la base de datos
-      const admins = await Admin.find({ rol: 'admin' }).select('-password'); // Excluye la contraseña para la seguridad
+      const admins = await Admin.find({ rol: 'admin' }).select('-password'); 
       res.json(admins);
     } catch (error) {
       console.error("Error al obtener administradores:", error);
