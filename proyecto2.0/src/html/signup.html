@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro - Aplicación de Buses</title>
+    <link rel="stylesheet" type="text/css" href="../css/styleSignup.css">
+</head>
+<body>
+    <main>
+        <form id="signup-form">
+            <h2>Registro</h2>
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <div class="error" id="errorNombre" style="color:red;"></div>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+            <div class="error" id="errorApellido" style=" color:red;"></div>
+
+            <label for="cedula">Cédula:</label>
+            <input type="number" id="cedula" name="cedula" required maxlength="9">
+            <div class="error" id="errorCedula" style="color:red;"></div>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <div id="error-container" style="display:none; color:red;"></div>
+            <div class="error" id="errorEmail" style="color:red;"></div>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            <div class="error" id="errorPassword" style="color:red;"></div>
+
+            <label for="confirmPassword">Confirmar Contraseña:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <div class="error" id="errorConfirmPassword" style="color:red;"></div>
+
+            <label for="tarjetaCredito">Número de Tarjeta de Crédito:</label>
+            <input type="text" id="tarjetaCredito" name="tarjetaCredito" required>
+            <div class="error" id="errorTarjetaCredito" style="color:red;"></div>
+
+            <label for="fechaVencimiento">Fecha de Vencimiento (MM/AA):</label>
+            <input type="text" id="fechaVencimiento" name="fechaVencimiento" required>
+            <div class="error" id="errorFechaVencimiento" style=" color:red;"></div>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+            <div class="error" id="errorCvv" style=" color:red;"></div>
+
+            <div class="terminos">
+                <input type="checkbox" id="terminos" name="terminos" required>
+                <label for="terminos">Acepto los términos y condiciones</label>
+            </div>
+            <div class="error" id="errorTerminos" style="color:red;"></div>
+
+            <button type="submit">Registrarse</button>
+            <div id="successMessage" style="display: none;">Registro exitoso!!</div>
+        </form>
+    </main>
+
+    <script src="../javascript/signup.js"></script>
+</body>
+</html>

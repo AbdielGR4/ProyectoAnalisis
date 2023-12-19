@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard de Choferes</title>
+    <link rel="stylesheet" type="text/css" href="../css/driverHome.css">
+</head>
+<body>
+
+    <div class="dashboard-main-wrapper">
+        <!-- Navbar lateral -->
+        <nav class="sidebar-nav">
+            <div class="sidebar-header">
+                <h1>Dashboard Chofer</h1>
+                <!-- Información del perfil del chofer aquí -->
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="javascript:void(0);" onclick="openPanel('profile')">Mi Perfil</a></li>
+                <li><a href="javascript:void(0);" onclick="openPanel('editProfile')">Editar Perfil</a></li>
+                <li><a href="javascript:void(0);" onclick="openPanel('startTrip')">Comenzar Viaje</a></li>
+                <li><a href="javascript:void(0);" onclick="openPanel('tripHistory')">Historial de Viajes</a></li>
+                <li><a href="javascript:void(0);" id="signOutButton">Cerrar Sesión</a></li>
+
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <div class="main-container">
+            <div id="profile" class="panel-content">
+                <h2>Perfil del Chofer</h2>
+                <br>
+                    <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+                    <p><strong>Apellido:</strong> <span id="apellido"></span></p>
+                    <p><strong>Email:</strong> <span id="email"></span></p>
+                    <p><strong>Ruta Asignada:</strong> <span id="ruta"></span></p>
+                    <p><strong>Billetera electrónica:</strong> <span id="wallet"></span></p>
+                    <p><strong>Rol:</strong> <span id="rol"></span></p>
+            </div>
+            <div id="editProfile" class="panel-content">
+                <!-- Formulario para editar el perfil -->
+                <h2>Editar Perfil del Chofer</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="inputNombre" name="nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="inputApellido" name="apellido" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="inputEmail" name="email" required>
+        </div>
+        <div class="form-group">
+            <button id="btnActualizar" type="button">Guardar Cambios</button>
+
+        </div>
+    </form>
+            </div>
+            <div id="startTrip" class="panel-content">
+                <!-- Formulario para comenzar un viaje -->
+            </div>
+            <div id="tripHistory" class="panel-content">
+                <!-- Listado del historial de viajes -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../javascript/driverHome.js"></script>
+</body>
+</html>

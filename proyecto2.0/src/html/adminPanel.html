@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard de Administración</title>
+    <link rel="stylesheet" type="text/css" href="../css/adminPanel.css">
+</head>
+<body>
+
+    <div class="dashboard-main-wrapper">
+        <!-- Navbar lateral -->
+        <nav class="sidebar-nav">
+            <!-- Logo y perfil de usuario -->
+            <div class="sidebar-header">
+                <h1>Panel de administracion</h1>>
+                <div class="user-profile">
+                    <!-- Aquí iría la foto y nombre del usuario -->
+                </div>
+            </div>
+            <!-- Menú de navegación -->
+            <ul class="sidebar-menu">
+                <li><a href="javascript:void(0);" onclick="openPanel('adminChoferes')">Administrar Choferes</a></li>
+                <li><a href="javascript:void(0);" onclick="openPanel('adminRutas')">Administrar Rutas</a></li>
+                <li><a href="javascript:void(0);" onclick="openPanel('administradores')">Administradores</a></li>
+                <li><a href="javascript:void(0);" onclick="openPanel('adminClientes')">Administrar Clientes</a></li>
+                <li><a href="javascript:void(0);" onclick="openPanel('historial')">Historial</a></li>
+                <li><a href="javascript:void(0);" id="signOutButton">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <div class="main-container">
+            <!-- Paneles de contenido -->
+            <div id="adminChoferes" class="panel-content">
+                <h2>Registro de Choferes</h2>
+    <form id="registroChoferes">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required>
+
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="ruta">Ruta asignada:</label>
+        <select id="rutaAsignada" name="rutaAsignada" required></select>
+
+        <button type="submit">Enviar Datos</button>
+    </form>
+    <div class="choferes-lista">
+        <h2>Listado de Choferes</h2>
+        <table class="table-lista">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Ruta Asignada</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí irían los registros de choferes cargados desde la base de datos -->
+                <!-- Ejemplo de un registro de chofer -->
+                <tr>
+                    <td>Juan</td>
+                    <td>Pérez</td>
+                    <td>123456789</td>
+                    <td>A2</td>
+                    <td>juan.perez@example.com</td>
+                    <td>101</td>
+                    <td>
+                        <button class="btn btn-eliminar">Eliminar</button>
+                        <button class="btn btn-actualizar">Actualizar</button>
+                        <button class="btn btn-banear">Banear</button>
+                    </td>
+                </tr>
+                <!-- Repetir filas como esta para cada chofer -->
+            </tbody>
+        </table>
+    </div>
+            </div>
+                                     <!-- Zona de Rutas -->
+            <div id="adminRutas" class="panel-content" style="display: none;">
+                <h2>Registro de Rutas</h2>
+    <form id="createRouteForm">
+        <label for="nombre">Nombre de la ruta:</label>
+        <input type="text" id="nombreRuta" name="nombre" required>
+
+        <label for="provincia">provincia:</label>
+        <input type="text" id="provincia" name="provincia" required>
+
+        <label for="Canton">Canton:</label>
+        <input type="text" id="canton" name="Canton" required>
+
+        <label for="CodigoCTP">CodigoCTP:</label>
+        <input type="text" id="codigoCTP" name="CodigoCTP" required>
+
+        <label for="Costo">Costo:</label>
+        <input type="number" id="costo" name="Costo" min="0" required>
+
+        <button type="submit">Enviar Datos</button>
+    </form>
+    <div class="rutas-lista">
+        <h2>Lista de rutas</h2>
+        <table class="table-lista">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Provincia</th>
+                    <th>Canton</th>
+                    <th>CodigoCTP</th>
+                    <th>Costo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ejemplo de un registro de administrador -->
+                <tr>
+                    <td>Alajuela</td>
+                    <td>Alajuelita</td>
+                    <td>12341254</td>
+                    <td>
+                        <button class="btn btn-eliminar">Eliminar</button>
+                        <button class="btn btn-actualizar">Actualizar</button>
+                    </td>
+                </tr>
+                <!-- Repetir filas como esta para cada administrador -->
+            </tbody>
+        </table>
+    </div>
+            </div>
+                                    <!-- Zona de Admin -->
+            <div id="administradores" class="panel-content" style="display: none;">
+                <h2>Registro de Administradores</h2>
+                <form id="registroAdministradores" class="form-registro">
+                    <div class="form-group">
+                        <label for="nombreAdmin">Nombre:</label>
+                        <input type="text" id="nombreAdmin" name="nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="apellidoAdmin">Apellido:</label>
+                        <input type="text" id="apellidoAdmin" name="apellido" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="emailAdmin">Email:</label>
+                        <input type="email" id="emailAdmin" name="email" required>
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="passwordAdmin">Password:</label>
+                        <input type="password" id="passwordAdmin" name="password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-enviar">Enviar Datos</button>
+                </form>
+                <div class="administradores-lista">
+                    <h2>Lista de Administradores</h2>
+                    <table class="table-lista">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Email</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Ejemplo de un registro de administrador -->
+                            <tr>
+                                <td>Juan</td>
+                                <td>Pérez</td>
+                                <td>juan.perez@example.com</td>
+                                <td>
+                                    <button class="btn btn-eliminar">Eliminar</button>
+                                    <button class="btn btn-actualizar">Actualizar</button>
+                                    <button class="btn btn-banear">Banear</button>
+                                </td>
+                            </tr>
+                            <!-- Repetir filas como esta para cada administrador -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>         
+            <div id="adminClientes" class="panel-content" style="display: none;">
+                <!-- Contenido para Administrar Clientes -->
+            </div>
+            <div id="historial" class="panel-content" style="display: none;">
+                <!-- Contenido para Historial -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../javascript/adminPanel.js"></script>
+</body>
+</html>
