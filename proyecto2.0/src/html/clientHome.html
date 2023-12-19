@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel de Administración de Clientes</title>
+<link rel="stylesheet" type="text/css" href="../css/styleClientHome.css">
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#" onclick="openPanel('panelPerfil')">Perfil</a>
+  <a href="#" onclick="openPanel('panelViajes')">Viajes</a>
+  <a href="#" onclick="openPanel('panelHistorial')">Historial</a>
+  <a href="#" id="CerrarSesion">Cerrar Sesión</a>
+</div>
+
+<div id="panelPerfil" class="panel active">
+    <h2>Perfil</h2>
+    <form id="perfilForm">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" placeholder="apellido" required>
+      </div>
+      <div class="form-group">
+        <label for="cedula">Cédula:</label>
+        <input type="text" id="cedula" name="cedula" placeholder="cédula" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="email" required>
+      </div>
+      <button type="button" onclick="modificarPerfil()">Modificar</button>
+    </form>
+
+    <!-- Zona del wallet -->
+  <div id="walletSection">
+    <h2>Wallet</h2>
+    <div id="walletBalance">Saldo: <span id="balance">Cargando...</span></div>
+    <form id="walletForm">
+      <div class="form-group">
+        <label for="recarga">Recargar:</label>
+        <input type="number" id="recarga" name="recarga" placeholder="Cantidad a recargar" min="1" required>
+      </div>
+      <button type="button" id="botonRecargaWallet">Recargar Wallet</button>
+    </form>
+  </div>
+
+  </div>
+  
+
+<div id="panelViajes" class="panel">
+  <h2>Viajes</h2>
+  <!-- Contenido del panel de pedidos -->
+</div>
+
+<div id="panelHistorial" class="panel">
+  <h2>Historial</h2>
+  <!-- Contenido del panel de configuración -->
+  <div id="historialTransacciones" class="transacciones-container">
+    <!-- Aquí se insertarán las transacciones -->
+  </div>
+</div>
+
+<script src="../javascript/clientHome.js"></script>
+
+</body>
+</html>

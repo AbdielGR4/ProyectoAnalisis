@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Aplicación de Buses</title>
+    <link rel="stylesheet" type="text/css" href="../css/styleLogin.css">
+</head>
+<body>
+    <main>
+        <form id="login-form">
+            <h2>Iniciar Sesión</h2>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+            <div id="successMessage" style="display: none;">acceso permitido!!</div>
+
+            <div class="options">
+                <a href="requestPass.html">¿Olvidaste tu contraseña?</a>
+                <a href="signup.html">Crear una cuenta</a>
+                <a href="index.html">Volver a Home</a>
+            </div>
+        </form>
+    </main>
+    <script src="../javascript/login.js"></script>
+</body>
+</html>
